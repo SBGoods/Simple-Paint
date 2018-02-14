@@ -1,19 +1,24 @@
-public abstract class shapeFactory{
+import java.util.ArrayList;
+
+public class shapeFactory{
   
-  public shapeFactory(){
-      
+  public shapeFactory(){}
+  
+  public protoShape factoryMethod(ArrayList<Integer> colors, int size, Pair coordinates){
+    return new protoShape(colors, size, coordinates);;
   }
   
-  public Shape factoryMethod(int colors, int size, Pair coordinates){
-    return null;
+  public protoShape factoryMethod(ArrayList<Integer> colors, int wide, int high, Pair coordinates){
+    return new protoShape(colors, wide, high, coordinates);  
   }
   
-  public Shape factoryMethod(int colos, int size, Pair start, Pair end){
-    return null;
+  public protoShape factoryMethod(ArrayList<Integer> colors, Pair start, Pair end){
+    return new protoShape(colors, start, end);
   }
   
-  public Shape factoryMethod(int colors, int size, int side, Pair coordinates){
-    return null;
+  public protoShape factoryMethod(ArrayList<Integer> colors, int sides, Pair coordinates, ArrayList<Pair> points){
+    return new protoShape(colors, sides, coordinates, points);
   }
+  
   
 }
