@@ -1,4 +1,4 @@
-public class protoShape{
+public class Shape{
   
     String shapeType;
     Pair coordinates;
@@ -13,7 +13,7 @@ public class protoShape{
     //constructor is overloaded to handle creation of all three object types 
     //the first is for squares and circles
   
-    public protoShape(ArrayList<Integer> colors, int size, Pair coordinates){
+    public Shape(ArrayList<Integer> colors, int size, Pair coordinates){
       this.colors = colors;  
       this.size = size;
       this.coordinates = coordinates;
@@ -22,7 +22,7 @@ public class protoShape{
     
     //this one is for rectangles
     
-    public protoShape(ArrayList<Integer> colors, int wide, int high, Pair coordinates){
+    public Shape(ArrayList<Integer> colors, int wide, int high, Pair coordinates){
       this.colors = colors;
       this.wide = wide;
       this.high = high;
@@ -32,7 +32,7 @@ public class protoShape{
     
     //this next constructor is for lines
     
-    public protoShape(ArrayList<Integer> colors, Pair start, Pair end){
+    public Shape(ArrayList<Integer> colors, Pair start, Pair end){
       this.colors = colors;
       this.start = start;  
       this.end = end;
@@ -41,7 +41,7 @@ public class protoShape{
     
     //this concstructor is for polygons
     
-    public protoShape(ArrayList<Integer> colors, int size, Pair coordinates, ArrayList<Pair> points){
+    public Shape(ArrayList<Integer> colors, int size, Pair coordinates, ArrayList<Pair> points){
       this.colors = colors;  
       this.size = size;
       this.coordinates = coordinates;
