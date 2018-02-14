@@ -50,39 +50,45 @@ public class Shape{
     }
     
     public void MoveShape(Pair Coordinates){
-      
-      this.coordinates = Coordinates;
-      
+      this.coordinates = Coordinates; 
     }
     
-    public void movePoly(Pair coordinates){
+    public void moveLine(Pair start, Pair end){
+      this.start = start;
+      this.end = end;
+    }
+    
+    public void movePoly(Pair coordinates, ArrayList<Pair> points){
       this.coordinates = coordinates;
+      this.points = points;
     }
     
     public Pair getCoordinates(){
-    
       return this.coordinates;
     }
     
     public void setColor(ArrayList<Integer> colors){
-    
       this.colors = colors;
-      
     }
     
     public ArrayList<Integer> getColor(){
-    
       return this.colors;
     }
     
     public void setSize(int size){
-    
       this.size = size;
-    
     }
     
     public int getSize(){
-    
       return this.size;
+    }
+    
+    public void setSizeRect(int wide, int high){
+      this.wide = wide;
+      this.high = high;
+    }
+    
+    public int getSizeRect(){
+      return this.wide*this.high;  
     }
 }
