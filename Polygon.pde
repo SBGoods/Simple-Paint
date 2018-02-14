@@ -1,7 +1,7 @@
-public class Polygon extends Shape{
+//public class Polygon extends Shape{
 
 
 
 
 
-}
+//}
