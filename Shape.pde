@@ -45,13 +45,14 @@ public class Shape{
     public Shape(ArrayList<Integer> colors, ArrayList<Pair> points){
       //polygon
       this.colors = colors;
-      shape.beginShape();
+      this.shape = createShape();
+      this.shape.beginShape();
       for(Pair x: points){
-        shape.vertex((float)x.getElement0(), (float)x.getElement1());
+        this.shape.vertex((int)x.getElement0(), (int)x.getElement1());
       }
-      shape.fill(color(this.colors.get(0), this.colors.get(1), this.colors.get(2)));
-      shape.endShape();
-    
+      this.shape.endShape(CLOSE);
+      this.shape.setFill(color(this.colors.get(0), this.colors.get(1), this.colors.get(2)));
+      
     }
     public void Move(Pair Coordinates){
       this.beginCoordinates = Coordinates;
