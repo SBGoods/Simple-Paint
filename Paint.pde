@@ -9,6 +9,20 @@ PShape square;
 void setup(){
 size(1000,1000);
 surface.setResizable(true);
+ArrayList<Integer> colors = new ArrayList<Integer>();
+colors.add(255);
+colors.add(0);
+colors.add(0);
+Pair<Integer,Integer> coor = new Pair<Integer,Integer>(50, 50);
+ArrayList<Integer> colors2 = new ArrayList<Integer>();
+colors2.add(0);
+colors2.add(0);
+colors2.add(0);
+Shape sample = new Shape(colors, 25, 25, coor);
+Shape sample2 = new Shape(colors2, 25, 25, coor);
+//list.add(sample.getPShape());
+list.add(sample2.getPShape());
+
 }
 
 void draw(){
@@ -19,7 +33,7 @@ void draw(){
     if(list.size() != 0){
       for(int i = 0; i < list.size(); i++){
         list.get(i).scale(zoom/100);
-        shape(list.get(1), 50, 50);
+        shape(list.get(i), 50, 50);
       }
     }
     
