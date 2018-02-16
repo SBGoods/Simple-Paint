@@ -22,10 +22,6 @@ public class Text{
   public void writeText(){
     if(this.show == true)
     text(contents, this.coordinates.getElement0(), this.coordinates.getElement1());
-    else{
-      fill(204);
-      text(contents, this.coordinates.getElement0(), this.coordinates.getElement1());
-    }
   }
   
   public void toggle(){
