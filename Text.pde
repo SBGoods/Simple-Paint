@@ -1,11 +1,13 @@
 public class Text{
   String contents;
-  Pair<Integer, Integer> coordinates;
+  int x;
+  int y;
   boolean show;
   
   public Text(String contents, int xcoord, int ycoord){
     this.contents = contents;
-    this.coordinates = new Pair<Integer, Integer>(xcoord, ycoord);
+    this.x = xcoord;
+    this.y = ycoord;
     this.show = true;
   }
   
@@ -14,14 +16,15 @@ public class Text{
   }
   
   public void move(int newX, int newY){
-    this.coordinates = new Pair<Integer,Integer>(newX, newY);
+    this.x = newX;
+    this.y = newY;
     this.toggle();
     this.writeText();
   }
   
   public void writeText(){
     if(this.show == true)
-    text(contents, this.coordinates.getElement0(), this.coordinates.getElement1());
+    text(contents, this.x, this.y);
   }
   
   public void toggle(){
