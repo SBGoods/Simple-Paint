@@ -1,8 +1,8 @@
-public class Group{
+public class Groups{
   ArrayList<Shape> members;
   PShape group;
   
-  public Group(Shape first){
+  public Groups(Shape first){
     this.members = new ArrayList<Shape>();
     this.members.add(first);
     this.group = createShape(GROUP);

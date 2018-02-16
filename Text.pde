@@ -1,27 +1,39 @@
 public class Text{
   String contents;
-  Pair<Integer, Integer> coordinates;
+  int x;
+  int y;
   boolean show;
   
   public Text(String contents, int xcoord, int ycoord){
+    println("hello2");
     this.contents = contents;
-    this.coordinates = new Pair<Integer, Integer>(xcoord, ycoord);
+    this.x = xcoord;
+    this.y = ycoord;
     this.show = true;
+    textlist.add(this);
+    println("size" + textlist.size());
   }
   
   public void addText(String newText){
+    textlist.remove(this);
     this.contents = contents + " " + newText;  
+    textlist.add(this);
   }
   
   public void move(int newX, int newY){
-    this.coordinates = new Pair<Integer,Integer>(newX, newY);
+    textlist.remove(this);
+    this.x = newX;
+    this.y = newY;
+    textlist.add(this);
     this.toggle();
     this.writeText();
   }
   
   public void writeText(){
-    if(this.show == true)
-    text(contents, this.coordinates.getElement0(), this.coordinates.getElement1());
+    if(this.show == true){
+    fill(0);
+    text(contents, this.x, this.y);
+    }
   }
   
   public void toggle(){

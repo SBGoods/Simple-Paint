@@ -1,5 +1,5 @@
 public class Shape{
-     
+     //new file
     PShape shape;
     Pair beginCoordinates;
     Pair endCoordinates;
@@ -10,14 +10,13 @@ public class Shape{
     ArrayList<Integer> coordinates = new ArrayList<Integer>();
     int x1, x2, y1, y2;
   
-    public Shape(ArrayList<Integer> colors, float widths, float heights, Pair coordinates){
+    public Shape(float widths, float heights, Pair coordinates){
        //circle
-       this.colors = colors;
        this.beginCoordinates = coordinates;
        this.swidth = (int) widths;
        this.sheight = (int) heights;
        shape = createShape(ELLIPSE, (int) coordinates.getElement0(), (int) coordinates.getElement1(), this.swidth, this.sheight);
-       shape.setFill(color(this.colors.get(0), this.colors.get(1), this.colors.get(2)));
+       //shape.setFill(color(this.colors.get(0), this.colors.get(1), this.colors.get(2)));
        list.add(this);
        x1 = (int) coordinates.getElement0() - swidth;
        y1 = (int) coordinates.getElement1() - sheight;
@@ -29,14 +28,13 @@ public class Shape{
        this.coordinates.add(y2);
     }
     
-    public Shape(ArrayList<Integer> colors, int wide, int high, Pair coordinates){
+    public Shape(int wide, int high, Pair coordinates){
        //square + rectangle
-       this.colors = colors;
        this.beginCoordinates = coordinates;
        this.swidth = wide;
        this.sheight = high;
        shape = createShape(RECT, (int) coordinates.getElement0(), (int) coordinates.getElement1(), wide, high);
-       shape.setFill(color(this.colors.get(0), this.colors.get(1), this.colors.get(2)));
+       //shape.setFill(color(this.colors.get(0), this.colors.get(1), this.colors.get(2)));
        list.add(this);
        x1 = (int) coordinates.getElement0();
        y1 = (int) coordinates.getElement1();
@@ -48,13 +46,12 @@ public class Shape{
        this.coordinates.add(y2);
     }
     
-    public Shape(ArrayList<Integer> colors, Pair start, Pair end){
+    public Shape(Pair start, Pair end){
       //line
-      this.colors = colors;
       this.beginCoordinates = start;
       this.endCoordinates = end;
       shape = createShape(LINE, (int) start.getElement0(), (int) start.getElement1(), (int) end.getElement0(), (int) end.getElement1());
-      shape.setFill(color(this.colors.get(0), this.colors.get(1), this.colors.get(2)));
+      //shape.setFill(color(this.colors.get(0), this.colors.get(1), this.colors.get(2)));
       list.add(this);
       int midX = (((int) start.getElement0() + (int) end.getElement0())/2);
       int midY = (((int) start.getElement1() + (int) end.getElement1())/2);
@@ -68,17 +65,17 @@ public class Shape{
       this.coordinates.add(y1);
     }
     
-    public Shape(ArrayList<Integer> colors, ArrayList<Pair> points){
+    public Shape(ArrayList<Pair> points){
       //polygon
       int minX = 100000;
       int maxX = 0; 
       int minY = 100000;
       int maxY = 0; 
-      this.colors = colors;
       this.shape = createShape();
       this.shape.beginShape();
       for(Pair x: points){
         this.shape.vertex((int)x.getElement0(), (int)x.getElement1());
+        println("points");
         if((int)x.getElement0() > maxX){
           maxX = (int)x.getElement0();
         }
@@ -93,8 +90,8 @@ public class Shape{
         }
       }
       this.shape.endShape(CLOSE);
-      shape.fill(color(this.colors.get(0), this.colors.get(1), this.colors.get(2)));
-      
+      //shape.fill(color(this.colors.get(0), this.colors.get(1), this.colors.get(2)));
+      list.add(this);
       
       this.coordinates.add(minX);
       this.coordinates.add(maxX);

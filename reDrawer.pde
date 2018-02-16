@@ -18,7 +18,7 @@ public class reDrawer{
       
     if(groupList.size() != 0){
       for(Group x: groupList){
-        x.drawGroup();  
+        //x.drawGroup();  
       }
     }
   }

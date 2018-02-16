@@ -21,6 +21,11 @@ public class Grid{
   public void changeLines(int t){
       this.GRID_MINOR_SPACING = t;
   }
+  
+  public void changeGrid(boolean f){
+      this.GRID_DRAW = f;
+  }
+  
   // grid code
   public void drawGrid() {
     if (GRID_DRAW) {

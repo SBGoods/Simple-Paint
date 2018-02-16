@@ -1,12 +1,12 @@
 import controlP5.*; //<>//
 import java.util.*;
 
-Grid guide = new Grid(10);
-int zoom = 100;
-ArrayList<Shape> list = new ArrayList<Shape>();
-Shape current;
+//Grid guide = new Grid(10);
+//int zoom = 100;
+//ArrayList<Shape> list = new ArrayList<Shape>();
+//Shape current;
 
-
+/*
 void setup(){
 size(1000,1000);
 surface.setResizable(true);
@@ -78,3 +78,4 @@ void mouseClicked() {
    }
    
 }
+*/
