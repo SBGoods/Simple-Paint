@@ -25,4 +25,10 @@ public class Group{
     return newList;
   }
   
+  public void drawGroup(){
+    for(Shape x: members){
+      shape(x.getPShape(), 50, 50);
+    }
+  }
+  
 }
