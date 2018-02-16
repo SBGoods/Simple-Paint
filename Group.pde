@@ -17,8 +17,12 @@ public class Group{
     return this.members;  
   }
   
-  public void dissolveGroup(){
-      
+  public ArrayList<Shape> dissolveGroup(ArrayList<Shape> list){
+    ArrayList<Shape> newList = list;
+    for(Shape x: members){
+        newList.add(x);
+    }
+    return newList;
   }
   
 }
